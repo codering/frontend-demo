@@ -10,10 +10,10 @@ const fetchUserById = async (params) => {
   return await api.get(`/users/${params.userId}`).data;
 };
 
-export const useGetUserById = (productId, options) => {
+export const useGetUserById = (userId, options) => {
   return useQuery({
-    queryFn: () => fetchUserById(productId),
-    queryKey: [...userKeyFactory.userById(productId)],
+    queryFn: () => fetchUserById(userId),
+    queryKey: [...userKeyFactory.userById(userId)],
     ...options,
   });
 };
